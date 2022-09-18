@@ -1,0 +1,19 @@
+{% extends 'authh/base.html' %}
+{% block title %}
+Home
+{% endblock %}
+{% block link %}
+<link href="/external/css_files/home_style.css" type="text/css" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<form action="/choice/" method="GET">
+<input type="submit" value="Take a command">
+</form>
+
+{% endif %}
+
+{% endblock %}

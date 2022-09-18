@@ -1,0 +1,36 @@
+h3 {
+  background-color: blue;
+}
+
+img {
+	height: 350px;
+	width: 100%
+}
+
+ul  {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+
+li a {
+	display: inline;
+	float: left;
+}
+
+li a {
+	display: block;
+	padding: 8px;
+	background-color: rgba(10, 100, 255, 0.5);
+	color: white;
+}
+
+li a:hover {
+	background-color: blue;
+}
+
+li a:active {
+	background-color: orange;
+}

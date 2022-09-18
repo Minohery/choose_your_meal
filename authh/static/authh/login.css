@@ -1,0 +1,16 @@
+
+
+input[type="submit"]:hover {
+  background-color: rgba(10, 100, 255, 0.5);
+}
+
+input[type="submit"]:active {
+  background-color: orange;
+}
+
+.liste:hover {
+  color: green;
+}
+.liste:active {
+  color: rgba(10, 100, 255, 0.5);
+}

@@ -1,0 +1,22 @@
+{% extends 'authh/base.html' %}
+{% block title %}
+Se connecter
+{% endblock %}
+{% block link %}
+{% endblock %}
+{% block content %}
+{% if error %}
+{{ error }}
+{% endif %}
+<form method="POST">
+{% csrf_token %}
+<br>
+<br>
+<table>
+{{ form.as_table }}
+</table>
+<br>
+<span><input type="submit" value="Log in"></span>
+</form>
+<p>Forgotten password ? Click <a href="{% url 'authh:reset_password' %}">here</a> to change your password.</p>
+{% endblock %}

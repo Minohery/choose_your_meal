@@ -1,0 +1,10 @@
+{% extends 'authh/base.html' %}
+{% block title %}
+Password change successfull
+{% endblock %}
+{% block content %}
+<h3>Your password has successfully been changed.</h3>
+<form action="{% url 'authh:home' %}" method="GET">
+  <input type="submit" value="Return home">
+</form>
+{% endblock %}

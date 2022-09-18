@@ -1,0 +1,15 @@
+{% extends 'authh/base.html' %}
+{% block title %}
+Confirmation code
+{% endblock %}
+{% block content %}
+{% if error %}
+{{ error }}
+{% endif %}
+<form method="POST">
+{% csrf_token %}
+<p>Enter the 6-digit code sent to your email.</p><br>
+{{ form }}
+<input type="submit" value="Confirm">
+</form>
+{% endblock %}

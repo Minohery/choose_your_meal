@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Mino">
+<meta name="description" content="">
+<title>{% block title %}{% endblock %}</title>
+<link href="/static/authh/home.css" type="text/css" rel="stylesheet">
+{% block link %}{% endblock %}
+</head>
+<body>
+<nav class="nav">
+<ul class="left">
+  <li><a href="{% url 'authh:home' %}" class="nav">Home</a></li>
+  {% if not user.is_authenticated %}
+  <li><a href="{% url 'authh:login' %}" class="nav">Log in</a></li>
+{% else %}
+<li><a href="{% url 'authh:logout' %}" class="nav" method="GET">Log out</a></li>
+<li><a href="{% url 'authh:change_password' %}" class="nav">Change password</a></li>
+</ul>
+</nav>
+{% endif %}
+<br>
+<br>
+{% block content %}{% endblock %}
+</body>
+</html>

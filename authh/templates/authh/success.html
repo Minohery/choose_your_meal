@@ -1,0 +1,14 @@
+{% extends 'authh/base.html' %}
+{% block title %}
+Success page
+{% endblock %}
+{% block content %}
+<h3 class="confirm">Your new password has been sent to your email.</h3>
+<p>If you did not receive any email, please reinitialize your form.</p>
+<form action="{% url 'authh:reset_password' %}" method="GET">
+  <input type="submit" value="Réinitialiser le formulaire">
+</form>
+<form action="{% url 'authh:home' %}" method="GET">
+  <input type="submit" value="Retourner à l'accueil">
+</form>
+{% endblock %}

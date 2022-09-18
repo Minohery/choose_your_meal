@@ -1,0 +1,39 @@
+{% extends 'choice/base.html' %}
+
+{% block title %}Choose a menu{% endblock %}
+
+{% block content %}
+{% if message %}
+{{ message }}
+{% endif %}
+
+<p>Your current menu is {{ current }}.</p>
+
+{% if liste.count == 0 %}
+<p>No menu yet, please come back later. </p>
+
+{% else %}
+
+{% for menu in liste %}
+{{ menu.ref }}. {{ menu }}<br>
+{% endfor %}
+
+{% endif %}
+
+{% if user.command != True %}
+
+<p>Choose your menu</p>
+
+<form action="{% url 'choice:choice' %}" method="POST">
+{% csrf_token %}
+{{ choice }}
+<input type="submit" value="Done">
+</form>
+
+{% else %}
+
+<p>Your order has already been taken.</p>
+
+{% endif %}
+
+{% endblock %}
